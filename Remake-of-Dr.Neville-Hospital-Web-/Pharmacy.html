@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pharmacy - NFTH</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* --- Back Button Fixes and Animation --- */
+      .back-nav {
+        margin-bottom: 20px;
+        padding: 0 15px;
+      }
+
+      .explore-btn {
+        color: #000000 !important; /* Force text to black */
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+        transition: all 0.2s ease-in-out; /* Smooth transition for animation */
+        padding: 8px 12px;
+        border-radius: 6px;
+      }
+
+      .explore-btn i {
+        transition: transform 0.2s ease;
+      }
+
+      /* Hover Animation: Text stays black, moves slightly left */
+      .explore-btn:hover {
+         transform: translateX(-5px);
+         background-color: rgba(0, 0, 0, 0.05); 
+        }
+
+      /* Click Animation: Shrinks slightly when pressed */
+      .explore-btn:active {
+        transform: scale(0.95) translateX(-5px);
+      }
+
+      /* --- Existing Styles Preserved --- */
+      .footer {
+        background: var(--footer-bg);
+        color: #d1d5db;
+        padding: 48px 0;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 32px;
+        margin-bottom: 48px;
+      }
+
+      .footer-col h4 {
+        color: white;
+        font-weight: bold;
+        margin-bottom: 24px;
+      }
+
+      .footer-link-list {
+        list-style: disc;
+        padding-left: 20px;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        font-size: 14px;
+        line-height: 1.4;
+      }
+
+      .footer-link-list a,
+      .footer-link-list li strong {
+        color: #d1d5db;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-link-list a:hover {
+        color: #4ade80;
+      }
+
+      .contact-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        font-size: 14px;
+      }
+
+      .contact-list li {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+
+      .contact-list i {
+        color: #4ade80;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .footer-mail-link:hover {
+        color: #4ade80;
+        text-decoration: underline;
+      }
+
+      .footer-bottom {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 32px;
+        border-top: 1px solid #374151;
+        flex-wrap: wrap;
+        gap: 16px;
+        text-align: center;
+      }
+
+      .social-links-custom {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 32px;
+        flex-wrap: wrap;
+      }
+
+      .social-icon-img {
+        width: 40px;
+        height: 40px;
+        transition:
+          transform 0.3s ease,
+          opacity 0.3s ease;
+      }
+
+      .social-links-custom a:hover .social-icon-img {
+        transform: translateY(-2px) scale(1.05);
+        opacity: 0.8;
+      }
+
+      .detail-content {
+        padding: 120px 0 80px;
+      }
+      .detail-img {
+        width: 100%;
+        max-height: 500px;
+        object-fit: cover;
+        border-radius: 16px;
+        margin-bottom: 32px;
+      }
+      .content-text p {
+        margin-bottom: 15px;
+        line-height: 1.8;
+        color: var(--gray-700);
+      }
+
+      /* --- Navbar Responsiveness --- */
+
+        /* On screens smaller than 992px, hide the phone info and book now button */
+        @media (max-width: 991px) {
+        .nav-right .phone-info,
+        .nav-right #bookNowBtn {
+            display: none !important;
+        }
+        
+        /* Optional: Adjust nav-wrapper to ensure logo and hamburger stay spaced out */
+        .nav-wrapper {
+            justify-content: space-between;
+            width: 100%;
+        }
+        }
+
+        /* --- Existing Detail Content Responsiveness --- */
+
+        /* Tablet (max-width: 768px) */
+        @media (max-width: 768px) {
+        .detail-content {
+            padding: 80px 0 40px; 
+        }
+
+        .detail-img {
+            max-height: 300px;
+            border-radius: 12px;
+        }
+
+        .section-header h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .content-text p {
+            font-size: 15px;
+            padding: 0 15px;
+        }
+
+        .back-nav{
+            margin-top: -20px;
+        }
+
+        }
+
+        /* Mobile Phones (max-width: 480px) */
+        @media (max-width: 480px) {
+        .detail-img {
+            max-height: 220px;
+            width: calc(100% - 40px); 
+            margin:0 auto 24px auto;
+            display: block;
+        }
+
+        .detail-content{
+            padding: 100px 0 40px !important;
+        }
+
+        .back-nav {
+            margin-top: 0; 
+            margin-bottom: 20px;
+            padding: 0 20px;
+            display: block;
+        }
+
+        .section-header h2 {
+            font-size: 22px;
+            padding:0 20px;
+        }
+
+        .content-text p {
+            font-size: 14px;
+            padding: 0 20px;
+            text-align: left; 
+        }
+
+        /* Ensure the footer columns stack properly */
+        .footer-grid {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        .contact-list li {
+            justify-content: center;
+        }
+
+        .explore-btn {
+            font-size: 15px;
+            padding: 10px 0;
+            display: inline-flex;
+            color: #000000 !important;
+        }
+        
+        .explore-btn i {
+            font-size: 18px; 
+        }
+
+        }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar" id="navbar">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="#home" class="logo-link">
+            <img
+              src="Logo.png"
+              alt="Dr Neville Fernando Teaching Hospital Logo"
+              class="site-logo"
+            />
+          </a>
+
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="e_channeling.php">E-Channeling</a></li>
+            <li><a href="view_reports.php">E-Lab Reports</a></li>
+            <li><a href="news&events.php">News & Events</a></li>
+            <li><a href="ContactUs.html">Contact Us</a></li>
+          </ul>
+
+          <div class="nav-right">
+            <div class="phone-info">
+              <i class="fas fa-phone"></i>
+              <span>+(94) 11 240 7600</span>
+            </div>
+            <button class="btn-primary" id="bookNowBtn">Book Now</button>
+          </div>
+
+          <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="detail-content container">
+      <div class="back-nav">
+        <a href="index.html#services" class="explore-btn">
+          <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+      </div>
+
+      <img
+        src="Services/Pharmacy.png"
+        alt="Emergency Treatment Unit"
+        class="detail-img"
+      />
+
+      <div class="section-header" style="text-align: center">
+        <h2>Pharmacy</h2>
+        <div class="content-text">
+          <p>
+            The NFTH prime concern is to provide the best quality drugs at the
+            lowest possible price to the consumers. Therefore NFTH makes a
+            revolution in the pharmaceutical industry by the price and quality.
+          </p>
+          <p>
+            Centralized Drug Stores / Surgical Stores for Hospital Supplies
+            supply indent of drugs and surgical consumables to various wards,
+            ETU, Operation theatres, departments of the hospital and college
+            through hospital issue counter. Delivery of drugs and surgical
+            consumables to the respective nursing stations under the direct
+            supervision of a pharmacist is also done by this department. They
+            issues drugs to the OPD Drugs Distribution Center and Injection
+            Room. Providing drug information to the Nursing Staff, Para-Medical
+            staff and Technicians is also conducted by this department.
+          </p>
+          <p>
+            OPD Pharmacy(Drug Distribution Center) Issue of drugs (selling) to
+            the patients based on the Prescription and or OTC drugs without a
+            prescription is carried out by this section. Counseling/detailing of
+            drugs to the patients by making them aware of proper usage of drugs
+            and also about Drug interactions/ side effects etc. are some of
+            their responsibilities.
+          </p>
+          <p>
+            Dispensing Services This unit provides dispensing services only for
+            the official preparations (as per Pharmacopoeias / Official Books)
+            against the formula requisition received through HOD/ Proper Channel
+            for different departments. In addition, the department is
+            responsible for organizing the regular meetings of the constituted
+            Drugs Verification Committee, Drug Committee and departmental
+            meetings from time to time for updating of policies and procedures
+            related to the drugs.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer" id="contact">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col contact-footer-col">
+            <h4>Contact Info</h4>
+            <ul class="contact-list">
+              <li>
+                <i class="fas fa-map-marker-alt"></i
+                ><span
+                  >406B, Church Road, Weliwita, Malabe 10115, Sri Lanka</span
+                >
+              </li>
+              <li>
+                <i class="fas fa-phone"></i
+                ><span>+(94) 11 240 7600<br />+(94) 11 770 7600</span>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i
+                ><span
+                  >Email:
+                  <a href="mailto:info@nfth.lk" class="footer-mail-link"
+                    >info@nfth.lk</a
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-link-list">
+              <li><a href="index.html#home">Home</a></li>
+              <li><a href="e_channeling.php">E-Channeling</a></li>
+              <li><a href="index.html#news">News & Events</a></li>
+              <li><a href="ContactUs.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Facilities</h4>
+            <ul class="footer-link-list">
+              <li>Ward Beds</li>
+              <li>Luxury & Semi Luxury Room Facilities</li>
+              <li>Food & Beverage</li>
+              <li>Labour Room</li>
+              <li>Pharmacy</li>
+              <li>Quality Control Unit</li>
+              <li>Car Park</li>
+            </ul>
+          </div>
+          <div class="footer-col social-footer-col">
+            <h4>FIND US ON</h4>
+            <div class="social-links-custom">
+              <a
+                href="https://www.facebook.com/NFTH.SriLanka/"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  src="facebook logo.png"
+                  alt="Facebook"
+                  class="social-icon-img"
+              /></a>
+              <a
+                href="https://www.youtube.com/@drnevillefernandoteachingh3020"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  src="youtube logo.png"
+                  alt="YouTube"
+                  class="social-icon-img"
+              /></a>
+              <a
+                href="https://www.linkedin.com/company/nfth/"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  src="linkedin logo.png"
+                  alt="LinkedIn"
+                  class="social-icon-img"
+              /></a>
+              <a
+                href="https://maps.app.goo.gl/L35uoV5DzovnrZL9A?g_st=awb"
+                target="_blank"
+                rel="noopener"
+                ><img src="location logo.png" alt="Map" class="social-icon-img"
+              /></a>
+            </div>
+            <h4 class="hours-heading">Working Hours</h4>
+            <ul class="footer-link-list">
+              <li><strong>Emergency:</strong> 24/7 Available</li>
+              <li><strong>OPD:</strong> Mon - Fri: 8:00 AM - 5:00 PM</li>
+              <li><strong>Saturday:</strong> 9:00 AM - 1:00 PM</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            © 2024 Dr Neville Fernando Teaching Hospital. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

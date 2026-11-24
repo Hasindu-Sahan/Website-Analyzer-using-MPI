@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Screening Packages - NFTH</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      /* --- Back Button Styling & Animation --- */
+      .back-nav {
+        margin-bottom: 30px;
+      }
+
+      .explore-btn {
+        color: #000000 !important; /* Ensures text is black */
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+      }
+
+      .explore-btn:hover {
+        color: #000000 !important;
+        transform: translateX(-5px); /* Moves text slightly left on hover */
+        opacity: 0.8;
+      }
+
+      .explore-btn:active {
+        transform: scale(0.95) translateX(-5px); /* Shrink effect when clicked */
+      }
+
+      /* CTA Themed Green-Blue Mix (Teal) */
+      :root {
+        --nfth-cta-teal: #14b8a6;
+      }
+
+      /* Prevent content from being hidden by the sticky navbar */
+      .packages-hero-padding {
+        padding-top: 130px;
+      }
+
+      /* Fixed Grid logic to keep boxes same size */
+      .package-card {
+        display: flex;
+        flex-direction: column;
+        align-self: start; /* prevents other cards from stretching */
+        background: white;
+        border-radius: 1rem;
+        border: 1px solid #e5e7eb;
+        transition: all 0.3s ease;
+      }
+
+      .details-container {
+        max-height: 0;
+        opacity: 0;
+        overflow-y: auto;
+        transition: all 0.5s ease-in-out;
+      }
+
+      /* Expansion does not push other boxes because of grid-item-start */
+      .details-active {
+        max-height: 450px;
+        opacity: 1;
+        margin-top: 1rem;
+        padding: 1rem;
+        background: #f0fdfa;
+        border-radius: 0.5rem;
+      }
+
+      .bg-cta-teal {
+        background-color: var(--nfth-cta-teal);
+      }
+      .text-cta-teal {
+        color: var(--nfth-cta-teal);
+      }
+      .btn-cta {
+        border: 2px solid var(--nfth-cta-teal);
+        color: var(--nfth-cta-teal);
+        transition: all 0.3s;
+      }
+      .btn-cta:hover {
+        background-color: var(--nfth-cta-teal);
+        color: white;
+      }
+
+      /* Footer styles matching original index.html precisely */
+      .footer-mail-link {
+        color: #d1d5db;
+        text-decoration: none;
+      }
+      .footer-mail-link:hover {
+        color: #4ade80;
+        text-decoration: underline;
+      }
+
+      /* --- Navbar Responsiveness --- */
+
+      /* On screens smaller than 992px, hide the phone info and book now button */
+      @media (max-width: 991px) {
+        .nav-right .phone-info,
+        .nav-right #bookNowBtn {
+          display: none !important;
+        }
+        
+        /* Optional: Adjust nav-wrapper to ensure logo and hamburger stay spaced out */
+        .nav-wrapper {
+          justify-content: space-between;
+          width: 100%;
+        }
+      }
+
+      /* --- Existing Detail Content Responsiveness --- */
+
+      /* Tablet (max-width: 768px) */
+      @media (max-width: 768px) {
+        .detail-content {
+          padding: 80px 0 40px; 
+        }
+
+        .detail-img {
+          max-height: 300px;
+          border-radius: 12px;
+        }
+
+        .section-header h2 {
+          font-size: 24px;
+          margin-bottom: 20px;
+        }
+
+        .content-text p {
+          font-size: 15px;
+          padding: 0 15px;
+        }
+      }
+
+      /* Mobile Phones (max-width: 480px) */
+      @media (max-width: 480px) {
+        .detail-img {
+          max-height: 220px;
+          width: calc(100% - 30px); /* Add slight margin padding for visual breathing room */
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .section-header h2 {
+          font-size: 20px;
+        }
+
+        .content-text p {
+          font-size: 14px;
+          line-height: 1.5;
+          text-align: left; /* Justify can sometimes create weird gaps on tiny screens */
+        }
+
+        /* Ensure the footer columns stack properly */
+        .footer-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .contact-list li {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50">
+    <nav class="navbar" id="navbar">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="index.html" class="logo-link">
+            <img
+              src="Logo.png"
+              alt="Dr Neville Fernando Teaching Hospital Logo"
+              class="site-logo"
+            />
+          </a>
+
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="e_channeling.php">E-Channeling</a></li>
+            <li><a href="view_reports.php">E-Lab Reports</a></li>
+            <li><a href="news&events.php">News & Events</a></li>
+            <li><a href="ContactUs.html">Contact Us</a></li>
+          </ul>
+
+          <div class="nav-right">
+            <div class="phone-info">
+              <i class="fas fa-phone"></i>
+              <span>+(94) 11 240 7600</span>
+            </div>
+            <button class="btn-primary" id="bookNowBtn">Book Now</button>
+          </div>
+
+          <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 packages-hero-padding"
+    >
+      <div class="back-nav">
+        <a href="index.html#services" class="explore-btn">
+          <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+      </div>
+
+      <div class="text-center mb-16">
+        <h2 class="text-5xl font-bold text-gray-900 mb-4">
+          AyuSri <span class="text-cta-teal">Health Screening</span>
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Quality Healthcare Services with State-of-the-Art Facilities.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div class="package-card shadow-lg border-t-4 border-cta-teal">
+          <div class="bg-cta-teal p-6 text-white text-center">
+            <i data-lucide="clipboard-check" class="mx-auto w-10 h-10 mb-2"></i>
+            <h3 class="text-xl font-bold">Complete Screening</h3>
+          </div>
+          <div class="p-6 flex-grow flex flex-col">
+            <div id="pkg1" class="details-container">
+              <h4 class="font-bold text-cta-teal text-sm">Investigations:</h4>
+              <ul class="text-xs space-y-1 text-gray-600">
+                <li>• FBC, ESR, FBS, Lipid/Liver/Renal Profiles</li>
+                <li>• TSH, FT4, HbA1c, Urine/Stools Micro</li>
+                <li>• ECG, 2D Echo, Exercise ECG, Chest X-Ray</li>
+                <li>• Ultrasound Abdomen, Lung Function</li>
+                <li>• Male: PSA | Female: CA125, PAP, Breast Scan</li>
+              </ul>
+            </div>
+            <button
+              onclick="togglePkg('pkg1')"
+              class="btn-cta w-full mt-auto py-2 rounded-lg font-bold"
+            >
+              View Details
+            </button>
+          </div>
+        </div>
+
+        <div class="package-card shadow-lg border-t-4 border-cta-teal">
+          <div class="bg-cta-teal p-6 text-white text-center">
+            <i data-lucide="activity" class="mx-auto w-10 h-10 mb-2"></i>
+            <h3 class="text-xl font-bold">Basic Screening</h3>
+          </div>
+          <div class="p-6 flex-grow flex flex-col">
+            <div id="pkg2" class="details-container">
+              <ul class="text-xs space-y-1 text-gray-600">
+                <li>• FBC, ESR, FBS, Lipid & Liver Profiles</li>
+                <li>• S. Creatinine & S. Electrolyte</li>
+                <li>• Urine Full Report, Chest X-Ray</li>
+                <li>• ECG, Ultra Sound Scan Abdomen</li>
+              </ul>
+            </div>
+            <button
+              onclick="togglePkg('pkg2')"
+              class="btn-cta w-full mt-auto py-2 rounded-lg font-bold"
+            >
+              View Details
+            </button>
+          </div>
+        </div>
+
+        <div class="package-card shadow-lg border-t-4 border-cta-teal">
+          <div class="bg-cta-teal p-6 text-white text-center">
+            <i data-lucide="search" class="mx-auto w-10 h-10 mb-2"></i>
+            <h3 class="text-xl font-bold">Cancer Screening</h3>
+          </div>
+          <div class="p-6 flex-grow flex flex-col">
+            <div id="pkg3" class="details-container">
+              <ul class="text-xs space-y-1 text-gray-600">
+                <li>• Stools for Occult Blood, ESR, LDH</li>
+                <li>• AFP, CEA, CA125, US Scan Abdomen</li>
+                <li>• Chest X-Ray | Male: PSA | Female: Mammogram</li>
+              </ul>
+            </div>
+            <button
+              onclick="togglePkg('pkg3')"
+              class="btn-cta w-full mt-auto py-2 rounded-lg font-bold"
+            >
+              View Details
+            </button>
+          </div>
+        </div>
+
+        <div class="package-card shadow-lg border-t-4 border-cta-teal">
+          <div class="bg-cta-teal p-6 text-white text-center">
+            <i data-lucide="flower-2" class="mx-auto w-10 h-10 mb-2"></i>
+            <h3 class="text-xl font-bold">Well Women</h3>
+          </div>
+          <div class="p-6 flex-grow flex flex-col">
+            <div id="pkg4" class="details-container">
+              <ul class="text-xs space-y-1 text-gray-600">
+                <li>• PAP Smear, CA125, Mammogram</li>
+                <li>• Breast Scan, Thyroid, FBS</li>
+                <li>• FBC, Lipid, Liver, Renal Profiles</li>
+              </ul>
+            </div>
+            <button
+              onclick="togglePkg('pkg4')"
+              class="btn-cta w-full mt-auto py-2 rounded-lg font-bold"
+            >
+              View Details
+            </button>
+          </div>
+        </div>
+
+        <div class="package-card shadow-lg border-t-4 border-cta-teal">
+          <div class="bg-cta-teal p-6 text-white text-center">
+            <i data-lucide="users" class="mx-auto w-10 h-10 mb-2"></i>
+            <h3 class="text-xl font-bold">Senior Citizen</h3>
+          </div>
+          <div class="p-6 flex-grow flex flex-col">
+            <div id="pkg5" class="details-container">
+              <ul class="text-xs space-y-1 text-gray-600">
+                <li>• Dementia Screening (AMT)</li>
+                <li>• Falls Assessment, Cardiac Scan</li>
+                <li>• Lipid, Liver, Renal, Thyroid</li>
+              </ul>
+            </div>
+            <button
+              onclick="togglePkg('pkg5')"
+              class="btn-cta w-full mt-auto py-2 rounded-lg font-bold"
+            >
+              View Details
+            </button>
+          </div>
+        </div>
+
+        <div class="package-card shadow-lg border-t-4 border-cta-teal">
+          <div class="bg-cta-teal p-6 text-white text-center">
+            <i data-lucide="droplet" class="mx-auto w-10 h-10 mb-2"></i>
+            <h3 class="text-xl font-bold">Diabetic Screening</h3>
+          </div>
+          <div class="p-6 flex-grow flex flex-col">
+            <div id="pkg6" class="details-container">
+              <ul class="text-xs space-y-1 text-gray-600">
+                <li>• HbA1c, Micro Albumin, FBS, PPBS</li>
+                <li>• Eye & Foot Examination</li>
+                <li>• Dietician Consultation</li>
+              </ul>
+            </div>
+            <button
+              onclick="togglePkg('pkg6')"
+              class="btn-cta w-full mt-auto py-2 rounded-lg font-bold"
+            >
+              View Details
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="package-card shadow-lg border-t-4 border-cta-teal lg:col-start-2"
+        >
+          <div class="bg-cta-teal p-6 text-white text-center">
+            <i data-lucide="heart-pulse" class="mx-auto w-10 h-10 mb-2"></i>
+            <h3 class="text-xl font-bold">Heart Package</h3>
+          </div>
+          <div class="p-6 flex-grow flex flex-col">
+            <div id="pkg7" class="details-container">
+              <ul class="text-xs space-y-1 text-gray-600">
+                <li>• 2D Echo Cardiogram, Exercise ECG</li>
+                <li>• ECG with Report, FBS, Lipid Profile</li>
+                <li>• Renal & Liver Profiles, Chest X-Ray</li>
+              </ul>
+            </div>
+            <button
+              onclick="togglePkg('pkg7')"
+              class="btn-cta w-full mt-auto py-2 rounded-lg font-bold"
+            >
+              View Details
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer" id="contact">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col contact-footer-col">
+            <h4>Contact Info</h4>
+            <ul class="contact-list">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span
+                  >406B, Church Road, Weliwita, Malabe 10115, Sri Lanka</span
+                >
+              </li>
+              <li>
+                <i class="fas fa-phone"></i>
+                <span>+(94) 11 240 7600<br />+(94) 11 770 7600</span>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <span
+                  >Email:
+                  <a href="mailto:info@nfth.lk" class="footer-mail-link"
+                    >info@nfth.lk</a
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-link-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="e_channeling.php">E-Channeling</a></li>
+              <li><a href="view_reports.php">E-Lab Reports</a></li>
+              <li><a href="news&events.php">News & Events</a></li>
+              <li><a href="ContactUs.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Facilities</h4>
+            <ul class="footer-link-list">
+              <li>Ward Beds</li>
+              <li>Luxury & Semi Luxury Room Facilities</li>
+              <li>Food & Beverage</li>
+              <li>Labour Room</li>
+              <li>Pharmacy</li>
+              <li>Quality Control Unit</li>
+              <li>Car Park</li>
+            </ul>
+          </div>
+
+          <div class="footer-col social-footer-col">
+            <h4>FIND US ON</h4>
+            <div class="social-links-custom">
+              <a
+                href="https://www.facebook.com/NFTH.SriLanka/"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+              >
+                <img
+                  src="facebook logo.png"
+                  alt="Facebook"
+                  class="social-icon-img"
+                />
+              </a>
+              <a
+                href="https://www.youtube.com/@drnevillefernandoteachingh3020"
+                target="_blank"
+                rel="noopener"
+                aria-label="YouTube"
+              >
+                <img
+                  src="youtube logo.png"
+                  alt="YouTube"
+                  class="social-icon-img"
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/nfth/"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+              >
+                <img
+                  src="linkedin logo.png"
+                  alt="LinkedIn"
+                  class="social-icon-img"
+                />
+              </a>
+              <a
+                href="https://maps.app.goo.gl/L35uoV5DzovnrZL9A?g_st=awb"
+                target="_blank"
+                rel="noopener"
+                aria-label="Map Location"
+              >
+                <img
+                  src="location logo.png"
+                  alt="Map Location"
+                  class="social-icon-img"
+                />
+              </a>
+            </div>
+
+            <h4 class="hours-heading">Working Hours</h4>
+            <ul class="footer-link-list">
+              <li><strong>Emergency:</strong> 24/7 Available</li>
+              <li><strong>OPD:</strong> Mon - Fri: 8:00 AM - 5:00 PM</li>
+              <li><strong>Saturday:</strong> 9:00 AM - 1:00 PM</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            © 2024 Dr Neville Fernando Teaching Hospital. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      lucide.createIcons();
+
+      function togglePkg(id) {
+        const clicked = document.getElementById(id);
+        const clickedBtn = clicked.nextElementSibling;
+
+        // Toggle ONLY the clicked box (no auto-closing others)
+        if (clicked.classList.contains("details-active")) {
+          clicked.classList.remove("details-active");
+          clickedBtn.innerText = "View Details";
+        } else {
+          clicked.classList.add("details-active");
+          clickedBtn.innerText = "Hide Details";
+        }
+      }
+    </script>
+  </body>
+</html>

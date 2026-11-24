@@ -1,0 +1,182 @@
+[
+    {
+        "test": 1,
+        "process_count": 2,
+        "total_files": 25,
+        "sequential_time": 0.08940109999093693,
+        "parallel_time": 0.08572999999159947,
+        "speedup": 1.042821649360751,
+        "efficiency": 52.141082468037546
+    },
+    {
+        "test": 2,
+        "process_count": 3,
+        "total_files": 25,
+        "sequential_time": 0.0817003999982262,
+        "parallel_time": 0.08988939999835566,
+        "speedup": 0.9088991582958696,
+        "efficiency": 30.29663860986232
+    },
+    {
+        "test": 3,
+        "process_count": 3,
+        "total_files": 25,
+        "sequential_time": 0.11529149999842048,
+        "parallel_time": 0.10009410000930075,
+        "speedup": 1.1518311267867696,
+        "efficiency": 38.39437089289232
+    },
+    {
+        "test": 4,
+        "process_count": 4,
+        "total_files": 25,
+        "sequential_time": 0.11196920000656974,
+        "parallel_time": 0.05649039999116212,
+        "speedup": 1.982092532962897,
+        "efficiency": 49.55231332407242
+    },
+    {
+        "test": 5,
+        "process_count": 8,
+        "total_files": 25,
+        "sequential_time": 0.10094830000889488,
+        "parallel_time": 0.03778209998563398,
+        "speedup": 2.671855191936891,
+        "efficiency": 33.39818989921114
+    },
+    {
+        "test": 6,
+        "process_count": 2,
+        "total_files": 25,
+        "sequential_time": 0.23464550000062445,
+        "parallel_time": 0.2210001999992528,
+        "speedup": 1.0617433830440777,
+        "efficiency": 53.087169152203884
+    },
+    {
+        "test": 7,
+        "process_count": 4,
+        "total_files": 25,
+        "sequential_time": 0.1021785999982967,
+        "parallel_time": 0.07679500000085682,
+        "speedup": 1.33053714430831,
+        "efficiency": 33.26342860770775
+    },
+    {
+        "test": 8,
+        "process_count": 8,
+        "total_files": 25,
+        "sequential_time": 0.09537930000078632,
+        "parallel_time": 0.05545899999560788,
+        "speedup": 1.719816441124794,
+        "efficiency": 21.497705514059927
+    },
+    {
+        "test": 9,
+        "process_count": 2,
+        "total_files": 25,
+        "sequential_time": 0.10695970000233501,
+        "parallel_time": 0.11492559999896912,
+        "speedup": 0.9306864615307159,
+        "efficiency": 46.53432307653579
+    },
+    {
+        "test": 10,
+        "process_count": 2,
+        "total_files": 25,
+        "sequential_time": 1.565522199991392,
+        "parallel_time": 0.31449889999930747,
+        "speedup": 4.977830447085314,
+        "efficiency": 248.89152235426567
+    },
+    {
+        "test": 11,
+        "process_count": 2,
+        "total_files": 25,
+        "sequential_time": 0.10102679999545217,
+        "parallel_time": 0.09831110000959598,
+        "speedup": 1.027623533716855,
+        "efficiency": 51.38117668584275
+    },
+    {
+        "test": 12,
+        "process_count": 2,
+        "total_files": 25,
+        "sequential_time": 0.07838940000510775,
+        "parallel_time": 0.12890989999868907,
+        "speedup": 0.608094490849073,
+        "efficiency": 30.40472454245365
+    },
+    {
+        "test": 13,
+        "process_count": 2,
+        "total_files": 25,
+        "sequential_time": 0.08646059999591671,
+        "parallel_time": 0.09100849999231286,
+        "speedup": 0.950027744696591,
+        "efficiency": 47.50138723482955
+    },
+    {
+        "test": 14,
+        "process_count": 4,
+        "total_files": 25,
+        "sequential_time": 0.0969182999979239,
+        "parallel_time": 0.04834820001269691,
+        "speedup": 2.0045896222087234,
+        "efficiency": 50.114740555218084
+    },
+    {
+        "test": 15,
+        "process_count": 4,
+        "total_files": 25,
+        "sequential_time": 0.0896208000194747,
+        "parallel_time": 0.047141099988948554,
+        "speedup": 1.9011181334437424,
+        "efficiency": 47.52795333609356
+    },
+    {
+        "test": 16,
+        "process_count": 4,
+        "total_files": 25,
+        "sequential_time": 0.08295770001132041,
+        "parallel_time": 0.050720500003080815,
+        "speedup": 1.6355852171465477,
+        "efficiency": 40.88963042866369
+    },
+    {
+        "test": 17,
+        "process_count": 4,
+        "total_files": 25,
+        "sequential_time": 0.08142729999963194,
+        "parallel_time": 0.05602990000625141,
+        "speedup": 1.4532829790977118,
+        "efficiency": 36.332074477442795
+    },
+    {
+        "test": 18,
+        "process_count": 2,
+        "total_files": 25,
+        "sequential_time": 0.12118740001460537,
+        "parallel_time": 0.13999039999907836,
+        "speedup": 0.8656836469886736,
+        "efficiency": 43.28418234943368
+    },
+    {
+        "test": 19,
+        "process_count": 2,
+        "total_files": 25,
+        "sequential_time": 0.15334039999288507,
+        "parallel_time": 0.1410600999952294,
+        "speedup": 1.0870572188596987,
+        "efficiency": 54.35286094298494
+    },
+    {
+        "test": 20,
+        "process_count": 8,
+        "total_files": 25,
+        "sequential_time": 0.1128413999977056,
+        "parallel_time": 0.05678149999585003,
+        "speedup": 1.9872916355847028,
+        "efficiency": 24.841145444808785
+    }
+]

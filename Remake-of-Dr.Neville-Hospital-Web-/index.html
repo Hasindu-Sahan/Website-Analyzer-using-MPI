@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr Neville Fernando Teaching Hospital - NFTH</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar" id="navbar">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="#home" class="logo-link">
+            <img
+              src="Logo.png"
+              alt="Dr Neville Fernando Teaching Hospital Logo"
+              class="site-logo"
+            />
+          </a>
+
+          <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="e_channeling.php">E-Channeling</a></li>
+            <li><a href="view_reports.php">E-Lab Reports</a></li>
+            <li><a href="news&events.php">News & Events</a></li>
+            <li><a href="contactUs.php">Contact Us</a></li>
+          </ul>
+
+          <!-- Search Bar -->
+          <div class="nav-search">
+            <input
+              type="text"
+              id="siteSearchInput"
+              placeholder="Search services..."
+            />
+
+            <button id="prevMatchBtn" title="Previous match">
+              <i class="fas fa-chevron-up"></i>
+            </button>
+
+            <button id="nextMatchBtn" title="Next match">
+              <i class="fas fa-chevron-down"></i>
+            </button>
+
+            <button id="siteSearchBtn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+
+          <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+      <div class="slideshow-container" id="slideshowContainer">
+        <img class="slide active-slide" src="1.jpg" alt="Hospital Exterior" />
+        <img class="slide" src="4.jpg" alt="Operation Theatre Team" />
+        <img class="slide" src="2.jpg" alt="Doctor checking patient" />
+        <img class="slide" src="3.jpg" alt="New parents with baby" />
+      </div>
+
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title fade-in">
+            Dr Neville Fernando <br /><span class="text-green"
+              >Teaching Hospital</span
+            >
+          </h1>
+          <p class="hero-subtitle fade-in-delay">
+            Quality Healthcare Services with State of the Art Facilities
+          </p>
+          <div class="hero-buttons fade-in-delay-2">
+            <a href="e_channeling.php" class="btn-primary btn-lg">
+              Book Appointment
+            </a>
+            <div class="nav-right">
+                <a href="admin_login.php" class="btn-login">Login</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2>About NFTH</h2>
+          <p>
+            Dr Neville Fernando Teaching Hospital (NFTH) is not just another
+            government hospital in the country which provides free health
+            services. As this state-of-the-art hospital was initially built as a
+            private hospital, it now offers the same luxury with quality free
+            healthcare to the people of this country.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card animate-on-scroll">
+            <div class="feature-icon icon-green">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3>Quality Care</h3>
+            <p>
+              Best healthcare with a team of 50+ eminent professors and
+              well-known consultants working 24x7
+            </p>
+          </div>
+
+          <div class="feature-card animate-on-scroll">
+            <div class="feature-icon icon-blue">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Teaching Hospital</h3>
+            <p>
+              First and only teaching hospital with free healthcare and a
+              private wing for patients who can afford
+            </p>
+          </div>
+
+          <div class="feature-card animate-on-scroll">
+            <div class="feature-icon icon-purple">
+              <i class="fas fa-award"></i>
+            </div>
+            <h3>Superior Service</h3>
+            <p>
+              Highly ethical and standard clinical practices with accurate
+              diagnosis and treatment decisions
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services-section">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">Our Services</h2>
+
+        <div class="service-grid-nfth">
+          <div class="service-item animate-on-scroll">
+            <a href="ETU.html">ETU</a>
+          </div>
+          <div class="service-item animate-on-scroll">
+            <a href="BloodBank.html">Blood Bank</a>
+          </div>
+          <div class="service-item animate-on-scroll">
+            <a href="SpecialityClinics&Channeling.html"
+              >Speciality Clinics & channeling</a
+            >
+          </div>
+          <div class="service-item animate-on-scroll">
+            <a href="AyuSri.html">Ayusri Health Screening Centre</a>
+          </div>
+          <div class="service-item animate-on-scroll">
+            <a href="IUIFertilityCentre.html">IUI Fertility Centre</a>
+          </div>
+          <div class="service-item animate-on-scroll">
+            <a href="Laboratory.html">Laboratory Service</a>
+          </div>
+          <div class="service-item animate-on-scroll">
+            <a href="OPD.html">OPD</a>
+          </div>
+          <div class="service-item animate-on-scroll">
+            <a href="Pharmacy.html">Pharmacy</a>
+          </div>
+          <div class="service-item animate-on-scroll">
+            <a href="CollectionCenters.html">Collection Centres</a>
+          </div>
+          <div class="service-item animate-on-scroll">
+            <a href="AmbulanceService.html">Ambulance Service</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="vision-mission-section">
+      <div class="container">
+        <div class="vm-grid">
+          <div class="vm-card animate-on-scroll">
+            <div class="vm-icon icon-green">
+              <i class="fas fa-award"></i>
+            </div>
+            <h3>Our Vision</h3>
+            <p>
+              To be the leading teaching hospital in Sri Lanka, providing
+              world-class healthcare services that are accessible to all, while
+              maintaining the highest standards of medical education and
+              research excellence.
+            </p>
+          </div>
+
+          <div class="vm-card animate-on-scroll">
+            <div class="vm-icon icon-blue">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3>Our Mission</h3>
+            <p>
+              To deliver comprehensive, compassionate healthcare services
+              through highly skilled professionals, advanced medical technology,
+              and continuous innovation in patient care and medical education.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="chooseNFTH" class="why-choose-section">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">Why Choose NFTH?</h2>
+
+        <div class="reasons-card-grid">
+          <div
+            class="reason-card animate-on-scroll"
+            style="background-image: url(&quot;expert\ team.jpeg&quot;)"
+          >
+            <div class="card-overlay">
+              <div class="card-content">
+                <h3>Full-Time Expert Team</h3>
+                <p>
+                  As consultants are a full-time team, they are available at any
+                  time; therefore diagnosis and treatment are less time
+                  consuming.
+                </p>
+                <a href="chooseNFTH1.html" class="explore-btn"
+                  >Explore More <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="reason-card animate-on-scroll"
+            style="background-image: url(&quot;team\ decisions.jpeg&quot;)"
+          >
+            <div class="card-overlay">
+              <div class="card-content">
+                <h3>Team-Based Decisions</h3>
+                <p>
+                  Diagnosis and treatment decisions are taken as a team,
+                  therefore they are more accurate.
+                </p>
+                <a href="chooseNFTH2.html" class="explore-btn"
+                  >Explore More <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="reason-card animate-on-scroll"
+            style="
+              background-image: url(&quot;friendly\ environment.jpeg&quot;);
+            "
+          >
+            <div class="card-overlay">
+              <div class="card-content">
+                <h3>Patient-Friendly Environment</h3>
+                <p>
+                  Located in a calm and quiet green environment with fresh air,
+                  yet reachable within 30 minutes from Colombo.
+                </p>
+                <a href="chooseNFTH3.html" class="explore-btn"
+                  >Explore More <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="reason-card animate-on-scroll"
+            style="background-image: url(&quot;clinical.jpeg&quot;)"
+          >
+            <div class="card-overlay">
+              <div class="card-content">
+                <h3>Ethical Clinical Practices</h3>
+                <p>
+                  As a teaching hospital, we always maintain highly ethical and
+                  standard clinical practices.
+                </p>
+                <a href="chooseNFTH4.html" class="explore-btn"
+                  >Explore More <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2>Ready to Experience Quality Healthcare?</h2>
+        <p>
+          Contact us today to book an appointment or learn more about our
+          services
+        </p>
+        <div class="cta-info">
+          <div class="cta-info-item">
+            <i class="fas fa-phone"></i>
+            <span>+(94) 11 240 7600</span>
+          </div>
+          <div class="cta-info-item">
+            <i class="fas fa-clock"></i>
+            <span>24/7 Service</span>
+          </div>
+        </div>
+        <a href="contactUs.php" class="btn-white btn-lg">
+          Contact Us Now
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer" id="contact">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col contact-footer-col">
+            <h4>Contact Info</h4>
+            <ul class="contact-list">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span
+                  >406B, Church Road, Weliwita, Malabe 10115, Sri Lanka</span
+                >
+              </li>
+              <li>
+                <i class="fas fa-phone"></i>
+                <span>+(94) 11 240 7600<br />+(94) 11 770 7600</span>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <span
+                  >Email:
+                  <a href="mailto:info@nfth.lk" class="footer-mail-link"
+                    >info@nfth.lk</a
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-link-list">
+              <li><a href="#home">Home</a></li>
+              <li><a href="e_channeling.php">E-Channeling</a></li>
+              <li><a href="view_reports.php">E-Lab Reports</a></li>
+              <li><a href="news&events.php">News & Events</a></li>
+              <li><a href="ContactUs.php">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Facilities</h4>
+            <ul class="footer-link-list">
+              <li>Ward Beds</li>
+              <li>Luxury & Semi Luxury Room Facilities</li>
+              <li>Food & Beverage</li>
+              <li>Labour Room</li>
+              <li>Pharmacy</li>
+              <li>Quality Control Unit</li>
+              <li>Car Park</li>
+            </ul>
+          </div>
+
+          <div class="footer-col social-footer-col">
+            <h4>FIND US ON</h4>
+            <div class="social-links-custom">
+              <a
+                href="https://www.facebook.com/NFTH.SriLanka/"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+              >
+                <img
+                  src="facebook logo.png"
+                  alt="Facebook"
+                  class="social-icon-img"
+                />
+              </a>
+              <a
+                href="https://www.youtube.com/@drnevillefernandoteachingh3020"
+                target="_blank"
+                rel="noopener"
+                aria-label="YouTube"
+              >
+                <img
+                  src="youtube logo.png"
+                  alt="YouTube"
+                  class="social-icon-img"
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/nfth/"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+              >
+                <img
+                  src="linkedin logo.png"
+                  alt="LinkedIn"
+                  class="social-icon-img"
+                />
+              </a>
+              <a
+                href="https://maps.app.goo.gl/L35uoV5DzovnrZL9A?g_st=awb"
+                target="_blank"
+                rel="noopener"
+                aria-label="Map Location"
+              >
+                <img
+                  src="location logo.png"
+                  alt="Map Location"
+                  class="social-icon-img"
+                />
+              </a>
+            </div>
+
+            <h4 class="hours-heading">Working Hours</h4>
+            <ul class="footer-link-list">
+              <li><strong>Emergency:</strong> 24/7 Available</li>
+              <li><strong>OPD:</strong> Mon - Fri: 8:00 AM - 5:00 PM</li>
+              <li><strong>Saturday:</strong> 9:00 AM - 1:00 PM</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            © 2024 Dr Neville Fernando Teaching Hospital. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <a href="https://chat.whatsapp.com/KRKXauTaCcbFjnHZPVPu7U?mode=gi_t" class="nfth-whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span class="tooltip-text">Chat with us</span>
+    </a>
+    
+    <script src="script.js"></script>
+  </body>
+</html>

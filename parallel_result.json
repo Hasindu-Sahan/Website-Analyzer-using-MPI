@@ -1,0 +1,172 @@
+{
+    "website": "Remake-of-Dr.Neville-Hospital-Web-",
+    "file_counts": {
+        "HTML": 15,
+        "CSS": 1,
+        "JavaScript": 1,
+        "PHP": 8
+    },
+    "total_files": 25,
+    "total_source_size": 349564,
+    "metrics": {
+        "HTML": {
+            "file_count": 15,
+            "file_size": 200592,
+            "elements": 1740,
+            "headings": 111,
+            "links": 264,
+            "images": 92,
+            "forms": 0,
+            "sections": 6,
+            "divs": 299
+        },
+        "CSS": {
+            "file_count": 1,
+            "file_size": 22406,
+            "lines": 1201,
+            "rules": 171,
+            "selectors": 166,
+            "media_queries": 4
+        },
+        "JavaScript": {
+            "file_count": 1,
+            "file_size": 9169,
+            "lines": 277,
+            "functions": 5,
+            "arrow_functions": 13,
+            "event_listeners": 14,
+            "variables": 41
+        },
+        "PHP": {
+            "file_count": 8,
+            "file_size": 117397
+        }
+    },
+    "file_size_percentages": {
+        "HTML": 57.38348342506665,
+        "CSS": 6.409698939250037,
+        "JavaScript": 2.622981771578309,
+        "PHP": 33.583835864105
+    },
+    "parallel_time": 0.05678149999585003,
+    "process_count": 8,
+    "processes": [
+        {
+            "rank": 0,
+            "pid": 20720,
+            "processor": "Hasindu_Sahan",
+            "tasks": [
+                "HTML"
+            ]
+        },
+        {
+            "rank": 1,
+            "pid": 21756,
+            "processor": "Hasindu_Sahan",
+            "tasks": [
+                "CSS"
+            ]
+        },
+        {
+            "rank": 2,
+            "pid": 11528,
+            "processor": "Hasindu_Sahan",
+            "tasks": [
+                "JavaScript"
+            ]
+        },
+        {
+            "rank": 3,
+            "pid": 17816,
+            "processor": "Hasindu_Sahan",
+            "tasks": [
+                "HTML"
+            ]
+        },
+        {
+            "rank": 4,
+            "pid": 16228,
+            "processor": "Hasindu_Sahan",
+            "tasks": [
+                "CSS"
+            ]
+        },
+        {
+            "rank": 5,
+            "pid": 10176,
+            "processor": "Hasindu_Sahan",
+            "tasks": [
+                "JavaScript"
+            ]
+        },
+        {
+            "rank": 6,
+            "pid": 20904,
+            "processor": "Hasindu_Sahan",
+            "tasks": [
+                "HTML"
+            ]
+        },
+        {
+            "rank": 7,
+            "pid": 22504,
+            "processor": "Hasindu_Sahan",
+            "tasks": [
+                "CSS"
+            ]
+        }
+    ],
+    "tasks": {
+        "HTML": {
+            "time": 0.05170939999516122,
+            "ranks": [
+                0,
+                3,
+                6
+            ],
+            "result": {
+                "file_count": 15,
+                "file_size": 200592,
+                "elements": 1740,
+                "headings": 111,
+                "links": 264,
+                "images": 92,
+                "forms": 0,
+                "sections": 6,
+                "divs": 299
+            }
+        },
+        "CSS": {
+            "time": 0.0012975000136066228,
+            "ranks": [
+                1,
+                4,
+                7
+            ],
+            "result": {
+                "file_count": 1,
+                "file_size": 22406,
+                "lines": 1201,
+                "rules": 171,
+                "selectors": 166,
+                "media_queries": 4
+            }
+        },
+        "JavaScript": {
+            "time": 0.0021813999919686466,
+            "ranks": [
+                2,
+                5
+            ],
+            "result": {
+                "file_count": 1,
+                "file_size": 9169,
+                "lines": 277,
+                "functions": 5,
+                "arrow_functions": 13,
+                "event_listeners": 14,
+                "variables": 41
+            }
+        }
+    }
+}
